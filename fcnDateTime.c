@@ -27,8 +27,7 @@ void seconds_from_start_of_month(time_t now) {
 
 void show_GMT_and_EDT_time(time_t rawtime) {
   char text[90];
-  rawtime = time(NULL); // time_t now = time(NULL);
-  time(&rawtime); // not necessary on this comment option
+  rawtime = time(&rawtime); // time_t now = time(NULL)
   struct tm *current_time = localtime(&rawtime); // struct tm *current_time = localtime(&now);
 
   int h = ((rawtime - 18000) / 3600) % 24;
